@@ -35,6 +35,7 @@ output application/java
 			<batch:process-records >
 				<batch:step name="Batch_Step" doc:id="48802f01-d110-403c-bdb3-21ee51c96d42" >
 					<batch:aggregator doc:name="Batch Aggregator" doc:id="d716d790-3bbb-4d7a-8844-a1191ff438ca" streaming="true">
+						<logger level="INFO" doc:name="Logger" doc:id="47370825-75d1-4181-b234-4330b095f08b" message="hi "/>
 						<logger level="INFO" doc:name="Logger" doc:id="cd02088c-c516-4626-b07f-9e5e41ff93af" message="#[payload]"/>
 						<db:bulk-insert doc:name="Bulk insert" doc:id="f845e86b-6008-4943-b128-9fc4796ca952" config-ref="Database_Config1">
 							<db:sql ><![CDATA[insert into muledb.emp(id,name,number,lname) values(:id, :name, :number, :lname)]]></db:sql>
